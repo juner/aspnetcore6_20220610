@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./.container/dotnet
+      args:
+        VARIANT: 6.0-bullseye
+        NODE_VERSION: none
+    volumes:
+      - ${HOME}/.aspnet/https:/home/vscode/.aspnet/https:cached
+      - ${HOME}/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+      - .:/workspace:cached
+    command: sleep infinity

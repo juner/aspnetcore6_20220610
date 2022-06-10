@@ -1,0 +1,108 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "dotnet build Web",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "Web",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dotnet run Web",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Web",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "options": {
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development",
+                    "ASPNETCORE_URLS": "http://localhost:8080",
+                },
+            },
+            "group": {
+                "kind": "none",
+            },
+            "presentation": {
+                "reveal": "always",
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dotnet run Web --no-launch-profile",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Web",
+                "--no-launch-profile",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "options": {
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development",
+                    "ASPNETCORE_URLS": "http://localhost:8080",
+                },
+            },
+            "group": {
+                "kind": "none",
+            },
+            "presentation": {
+                "reveal": "always",
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "dotnet run watch Web",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "watch",
+                "--project",
+                "Web",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "options": {
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development",
+                    "ASPNETCORE_URLS": "http://localhost:8080",
+                },
+            },
+            "group": {
+                "kind": "none",
+            },
+            "presentation": {
+                "reveal": "always",
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
